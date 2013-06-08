@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+void Minmax(float &A, float &B);
+
+int main()
+{
+    float A, B, C, D;
+    setlocale(LC_ALL, "Russian");
+    cout<<"Введите A:"<<endl;
+    cin>>A;
+    cout<<"Введите B:"<<endl;
+    cin>>B;
+    cout<<"Введите C:"<<endl;
+    cin>>C;
+    cout<<"Введите D:"<<endl;
+    cin>>D;
+    Minmax(A, B);
+    Minmax(C, D);
+    Minmax(A, C);
+    Minmax(B, D);
+    cout<<"Максимальное число: "<<D<<endl<<"Минимальное число: "<<A;
+    return 0;
+}
+
+void Minmax(float &A, float &B)
+{
+    float tmp;
+    if (A>B)
+    {
+        tmp = A;
+        A = B;
+        B = tmp;
+    }
+}
